@@ -6,7 +6,7 @@
 #    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 02:39:39 by greus-ro          #+#    #+#              #
-#    Updated: 2024/11/02 18:18:01 by gabriel          ###   ########.fr        #
+#    Updated: 2024/11/02 19:14:46 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,11 +76,12 @@ all: folders compile
 
 compile: 
 	@echo "\t${CYAN}Making libft...${RST}"
-	@git submodule update --init --recursive
+#	@git submodule update --init --recursive
+	@git submodule update --recursive --remote
+
 	@make --no-print-directory all -C ${LIBFT_DIR}
 	@echo "\t${CYAN}Making ${NAME}...${RST}"
 	@make --no-print-directory ${BIN_DIR}/${NAME}
-
 
 ${BIN_DIR}/${NAME}: ${LIBFT_DIR} ${OBJS} Makefile
 	@echo "\t${CYAN}Linking ${NAME}${RST}"
