@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_width_bonus.c                                   :+:      :+:    :+:   */
+/*   ft_format_prefix.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/09 12:06:09 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/07/14 00:27:44 by gabriel          ###   ########.fr       */
+/*   Created: 2024/07/05 21:43:40 by gabriel           #+#    #+#             */
+/*   Updated: 2024/11/02 17:24:23 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
-/*
-If we geet precision with numeric conversion, zero flag is ignored.
-*/
-int	ft_format_width(t_format format, char **str, bool sign_print)
+bool	ft_format_parse_prefix_flags(const char *str, size_t *j, \
+					t_format *format)
 {
-	int		len;
-
-	if (format.n_width > 0)
+	if (str[*j] == '+' || str[*j] == '#')
 	{
-		len = ft_strlen(*str);
-		if (sign_print)
-			len++;
-		if ((int)format.n_width - len <= 0)
-			return (0);
-		if (ft_add_padding(format, str, format.n_width, len) < 0)
-			return (-1);
+		if (str[*j] == '+')
+			format->b_plus = true;
+		if (str[*j] == '#')
+			format->b_hash = true;
+		*j = *j + 1;
+		return (true);
 	}
-	return (0);
+	return (false);
 }

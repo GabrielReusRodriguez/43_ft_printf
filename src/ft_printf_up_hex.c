@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_format_prefix_bonus.c                           :+:      :+:    :+:   */
+/*   ft_printf_up_hex.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/05 21:43:40 by gabriel           #+#    #+#             */
-/*   Updated: 2024/07/17 22:41:38 by gabriel          ###   ########.fr       */
+/*   Created: 2024/01/10 19:19:46 by greus-ro          #+#    #+#             */
+/*   Updated: 2024/11/02 17:23:27 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-#include "ft_printf_bonus.h"
+#include <stdarg.h>
+#include "ft_printf.h"
 
-bool	ft_format_parse_prefix_flags(const char *str, size_t *j, \
-					t_format *format)
+/*Sign flags + and space do not have sense with low hex . 
+	When we compile it gives you a "warning"*/
+/*Hashtag flag is treated at ft_print_hex*/
+int	ft_printf_up_hex(int fd, va_list argp, t_format format)
 {
-	if (str[*j] == '+' || str[*j] == '#')
-	{
-		if (str[*j] == '+')
-			format->b_plus = true;
-		if (str[*j] == '#')
-			format->b_hash = true;
-		*j = *j + 1;
-		return (true);
-	}
-	return (false);
+	int				num_bytes;
+	unsigned int	arg;
+
+	arg = va_arg(argp, unsigned int);
+	num_bytes = ft_printf_hex(fd, arg, true, format);
+	return (num_bytes);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_hex_bonus.c                              :+:      :+:    :+:   */
+/*   ft_printf_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:52:41 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/07/18 00:12:20 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:23:51 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 /*Sign flags + and space do not have sense with hex . 
 	When we compile it gives you a "warning"*/

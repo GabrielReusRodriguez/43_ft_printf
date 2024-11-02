@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:57:30 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/07/12 00:33:36 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:22:16 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <unistd.h>
 
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 //static int	ft_print_special_char(int fd, char c, va_list argp)
 static int	ft_print_special_char(int fd, char const *str, size_t *i, \

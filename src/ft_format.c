@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_format_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_format.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 21:43:40 by gabriel           #+#    #+#             */
-/*   Updated: 2024/07/17 22:42:05 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:24:18 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 static	void	ft_format_init(t_format *format)
 {

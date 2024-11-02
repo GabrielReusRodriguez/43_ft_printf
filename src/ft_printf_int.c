@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int_bonus.c                              :+:      :+:    :+:   */
+/*   ft_printf_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:14:49 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/07/14 01:12:30 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:23:46 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdarg.h>
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 static int	ft_format_plus(int value, t_format format, char **num)
 {

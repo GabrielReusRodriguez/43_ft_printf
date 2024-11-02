@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_str_bonus.c                              :+:      :+:    :+:   */
+/*   ft_printf_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:09:17 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/07/18 00:01:20 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:23:24 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 /*Sign flags + and space do not have sense with strings . 
 		When we compile it gives you a "warning"*/

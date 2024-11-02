@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_format_padding_bonus.c                          :+:      :+:    :+:   */
+/*   ft_format_padding.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 21:43:40 by gabriel           #+#    #+#             */
-/*   Updated: 2024/07/17 22:42:40 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:24:45 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 static int	ft_format_get_width(const char *str, size_t *i, t_format *format)
 {

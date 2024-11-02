@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_ptr_bonus.c                              :+:      :+:    :+:   */
+/*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:19:39 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/07/17 22:35:32 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:23:32 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdbool.h>
 
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 static int	ft_format(t_format format, char **ptr)
 {

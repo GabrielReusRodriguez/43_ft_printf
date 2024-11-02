@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char_bonus.c                             :+:      :+:    :+:   */
+/*   ft_printf_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:04:23 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/07/17 23:58:04 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:24:02 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdarg.h>
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 //The 0 flags is not used with chars because it compiles with warning.
 

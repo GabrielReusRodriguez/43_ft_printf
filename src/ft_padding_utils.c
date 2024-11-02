@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_padding_utils_bonus.c                           :+:      :+:    :+:   */
+/*   ft_padding_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 00:04:16 by gabriel           #+#    #+#             */
-/*   Updated: 2024/07/17 22:34:43 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:24:13 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 int	ft_add_padding(t_format format, char **str, int padding_len, int str_len)
 {

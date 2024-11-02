@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_precision_bonus.c                               :+:      :+:    :+:   */
+/*   ft_precision.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 19:34:00 by gabriel           #+#    #+#             */
-/*   Updated: 2024/07/14 00:23:25 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:24:07 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 
 #include "libft.h"
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 /*With strings , precision printfs n firsts chars*/
 static int	ft_format_string_precision(t_format format, char **str)

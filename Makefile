@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+         #
+#    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 02:39:39 by greus-ro          #+#    #+#              #
-#    Updated: 2024/11/01 23:46:38 by greus-ro         ###   ########.fr        #
+#    Updated: 2024/11/02 17:40:07 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ LIBFT_LIB = ${LIBFT_DIR}/bin/libft.a
 # Compiler stuff
 ################################################################################
 
-NAME		= libgnl.a
+NAME		= libprintf.a
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra -MMD -MP
 DFLAGS		= -D BUFFER_SIZE=30
@@ -73,50 +73,38 @@ HDRS	= $(patsubst %.h, ${INC_DIR}/%.h, ${HDR})
 OBJS	= $(patsubst %.c, ${OBJ_DIR}/%.o, ${SRC})
 DEPS	= $(patsubst %.c, ${OBJ_DIR}/%.d, ${SRC})
 
-all: folders ${SRCS} ${HDRS} ${BIN_DIR}/${NAME}
+all: folders compile
 
-${SRCS}:
-	@echo "Importing libft source..."
-	@git submodule update --init
-	@cp ${LIBFT_DIR}/src/ft_strjoin.c ${SRC_DIR}/libft/ft_strjoin.c
-	@cp ${LIBFT_DIR}/src/ft_strlen.c ${SRC_DIR}/libft/ft_strlen.c
-	@cp ${LIBFT_DIR}/src/ft_istrchr.c ${SRC_DIR}/libft/ft_istrchr.c
-	@cp ${LIBFT_DIR}/src/ft_substr.c ${SRC_DIR}/libft/ft_substr.c
-	@cp ${LIBFT_DIR}/src/ft_pointer.c ${SRC_DIR}/libft/ft_pointer.c
-	@cp ${LIBFT_DIR}/src/ft_calloc.c ${SRC_DIR}/libft/ft_calloc.c
-	@cp ${LIBFT_DIR}/src/ft_strlcpy.c ${SRC_DIR}/libft/ft_strlcpy.c
-	@cp ${LIBFT_DIR}/src/ft_strlcat.c ${SRC_DIR}/libft/ft_strlcat.c
-	@cp ${LIBFT_DIR}/src/ft_bzero.c ${SRC_DIR}/libft/ft_bzero.c
-	@cp ${LIBFT_DIR}/src/ft_memset.c ${SRC_DIR}/libft/ft_memset.c
-	
-${HDRS}:
-	@echo "Importing libft haders..."
-	@git submodule update --init
-	@cp ${LIBFT_DIR}/include/libft.h ${INC_DIR}/libft/libft.h
+compile: 
+	@echo "\t${CYAN}Making libft...${RST}"
+	@git submodule update --init --recursive
+	@make --no-print-directory all -C ${LIBFT_DIR}
+	@echo "\t${CYAN}Making ${NAME}...${RST}"
+	@make --no-print-directory ${BIN_DIR}/${NAME}
 
-${BIN_DIR}/${NAME}: ${OBJS} Makefile
+
+${BIN_DIR}/${NAME}: ${LIBFT_DIR} ${OBJS} Makefile
 	@echo "\t${CYAN}Linking ${NAME}${RST}"
-	ar -rcs ${BIN_DIR}/${NAME} ${OBJS}
+	@ar -rcs ${BIN_DIR}/${NAME} ${OBJS}
 
 ${OBJ_DIR}/%.o:${SRC_DIR}/%.c Makefile
 	@echo "\t${YELLOW}Compiling ${RST} $<"
-	@${CC} ${CFLAGS} ${SANITIZE_FLAGS} ${DFLAGS} -I ${INC_DIR} -I ${INC_DIR}/libft -o $@ -c $<
+	@${CC} ${CFLAGS} ${SANITIZE_FLAGS} ${DFLAGS} -I ${INC_DIR} -I ${LIBFT_DIR}/include -o $@ -c $<
 
 clean:
-	rm -rf ${OBJ_DIR}
+	@make --no-print-directory clean -C ${LIBFT_DIR}
+	@rm -rf ${OBJ_DIR}
 
 fclean: clean 
-	rm -rf ${BIN_DIR}
+	@make --no-print-directory fclean -C ${LIBFT_DIR}
+	@rm -rf ${BIN_DIR}
 
 re: fclean all
 
 folders: 
 	@mkdir -p ${BIN_DIR}
 	@mkdir -p ${OBJ_DIR}
-	@mkdir -p ${OBJ_DIR}/libft
-	@mkdir -p ${SRC_DIR}/libft
-	@mkdir -p ${INC_DIR}/libft
 	
 -include ${DEPS}
 
-.PHONY: all clean fclean re folders
+.PHONY: all clean fclean re folders compile
