@@ -6,7 +6,7 @@
 #    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 02:39:39 by greus-ro          #+#    #+#              #
-#    Updated: 2024/11/02 17:40:07 by gabriel          ###   ########.fr        #
+#    Updated: 2024/11/02 18:18:01 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,6 @@ LIBFT_LIB = ${LIBFT_DIR}/bin/libft.a
 NAME		= libprintf.a
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra -MMD -MP
-DFLAGS		= -D BUFFER_SIZE=30
 
 ifdef	CSANITIZE
 	SANITIZE_FLAGS	= -g3 -fsanitize=address -fsanitize=leak
